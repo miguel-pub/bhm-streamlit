@@ -18,7 +18,7 @@ def get_pdf_url():
         # More efficient dictionary comprehension
     return {
         item.text.strip("\n"): item.get("href").strip("./")
-        for item in thelist_items
+        for item in thelist_items if "US" in item.text
         }
 
 def download_pdf(linksuffix: str, selection: str):
@@ -28,3 +28,9 @@ def download_pdf(linksuffix: str, selection: str):
     Path(filename).write_bytes(response.content)
     print(f"Downloaded {filename}")
     return filename
+
+def kalenderwoche():
+    today = datetime.datetime.now()
+    week = today.strftime("%V")
+    year = today.strftime("%Y")
+    return week
