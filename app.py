@@ -5,7 +5,7 @@ kursliste = get_pdf_url()
 selection = st.selectbox("Wähle deine Umschulung aus:", list(get_pdf_url().keys()))
 st.write(f"{kursliste[selection]}")
 
-with open(f"KW10/{selection}-Berichtsheft-KW10.xlsx", "rb") as file:
+with open(f"KW10/US FK Lagerlogistik 2023 Sommer Aug B-Berichtsheft_KW10.xlsx", "rb") as file:
     st.download_button(
         label="Download Berichtsheft",
         data=file,
